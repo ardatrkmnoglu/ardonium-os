@@ -21,15 +21,15 @@ $(BUILD_DIR)/main.img: bootloader kernel
 
 # Bootloader
 bootloader: $(BUILD_DIR)/boot.bin
-$(BUILD_DIR)/boot.bin: $(SRC_DIR)/boot/boot.asm
+$(BUILD_DIR)/boot.bin: $(SRC_DIR)/boot.asm
 	mkdir -p $(BUILD_DIR)
-	$(ASM) $(SRC_DIR)/boot/boot.asm -f bin -o $(BUILD_DIR)/boot.bin
+	$(ASM) $(SRC_DIR)/boot.asm -f bin -o $(BUILD_DIR)/boot.bin
 
 # Kernel
 kernel: $(BUILD_DIR)/kernel.bin
-$(BUILD_DIR)/kernel.bin: $(SRC_DIR)/kernel/main.asm
+$(BUILD_DIR)/kernel.bin: $(SRC_DIR)/main.asm
 	mkdir -p $(BUILD_DIR)
-	$(ASM) $(SRC_DIR)/kernel/main.asm -f bin -o $(BUILD_DIR)/kernel.bin
+	$(ASM) $(SRC_DIR)/main.asm -f bin -o $(BUILD_DIR)/kernel.bin
 
 # Run
 run: floppy_img
