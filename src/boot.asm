@@ -1,8 +1,6 @@
 %define KERNELADDR         0x1000
 %define READSECTOR         0x02
 
-
-
 [ORG  0x7C00]
 [BITS 16]
 
@@ -49,7 +47,7 @@ print:
 .done_print:
     ret
 
-boot_msg:                   db "Loading Ardonium/OS...", 0x0d, 10, 0
+boot_msg:                   db "Loading ardonium/OS...", 0x0d, 10, 0
 err_msg:                    db "Disk read failed!", 0x0d, 10, 0
 
 times 510 - ($ - $$)        db 0                    ; boot signature
